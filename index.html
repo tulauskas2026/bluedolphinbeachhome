@@ -74,6 +74,51 @@
       z-index: 1;
     }
 
+    /* Language selector row */
+    .language-switcher {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.35rem;
+      margin-bottom: 1rem;
+      font-size: 0.8rem;
+    }
+
+    .language-label {
+      align-self: center;
+      margin-right: 0.25rem;
+      opacity: 0.7;
+    }
+
+    .lang-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      border: none;
+      border-radius: 999px;
+      padding: 0.2rem 0.6rem;
+      background: rgba(255,255,255,0.7);
+      font: inherit;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: background 0.2s ease, opacity 0.2s ease, transform 0.1s ease;
+    }
+
+    .lang-btn .flag {
+      font-size: 1rem;
+    }
+
+    .lang-btn:hover {
+      opacity: 1;
+      transform: translateY(-1px);
+    }
+
+    .lang-btn.active {
+      background: #0077b6;
+      color: #ffffff;
+      opacity: 1;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
     .logo {
       max-width: 200px;
       height: auto;
@@ -101,6 +146,23 @@
   <div class="bg-overlay"></div>
 
   <div class="card">
+    <!-- Language selector -->
+    <div class="language-switcher">
+      <span class="language-label">Language:</span>
+      <button class="lang-btn active" type="button">
+        <span class="flag">🇬🇧</span><span>EN</span>
+      </button>
+      <button class="lang-btn" type="button">
+        <span class="flag">🇮🇹</span><span>IT</span>
+      </button>
+      <button class="lang-btn" type="button">
+        <span class="flag">🇩🇪</span><span>DE</span>
+      </button>
+      <button class="lang-btn" type="button">
+        <span class="flag">🇫🇷</span><span>FR</span>
+      </button>
+    </div>
+
     <!-- Image ABOVE the text -->
     <img src="BlueDolphinWHITE_Sunset.jpg" alt="Blue Dolphin Beach Home logo" class="logo" />
 
