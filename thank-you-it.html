@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>Grazie – Blue Dolphin Beach Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Grazie per esserti iscritto alla lista VIP di Blue Dolphin Beach Home."
+  />
+
+  <!-- Favicon (opzionale, se già presente sul sito) -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top, #003554 0%, #00101a 55%, #000711 100%);
+      color: #ffffff;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.96);
+      color: #102a43;
+      padding: 2.4rem 2.1rem;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+      max-width: 520px;
+      width: 92%;
+      text-align: center;
+    }
+
+    .logo {
+      max-width: 190px;
+      height: auto;
+      display: block;
+      margin: 0 auto 1.4rem;
+    }
+
+    h1 {
+      font-size: 1.85rem;
+      margin: 0 0 0.7rem;
+    }
+
+    p {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.55;
+    }
+
+    .highlight {
+      font-weight: 600;
+      color: #005f9e;
+    }
+
+    .spacer {
+      height: 1.1rem;
+    }
+
+    .eco-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-top: 0.6rem;
+      font-size: 0.9rem;
+      color: #4b5563;
+    }
+
+    .eco-note img {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .button-row {
+      margin-top: 1.7rem;
+    }
+
+    .btn-home {
+      display: inline-block;
+      padding: 0.65rem 1.6rem;
+      border-radius: 999px;
+      border: none;
+      text-decoration: none;
+      font-size: 0.98rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      background: #0077b6;
+      color: #ffffff;
+      box-shadow: 0 6px 16px rgba(0, 119, 182, 0.45);
+      transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-home:hover {
+      background: #005f9e;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(0, 95, 158, 0.5);
+    }
+
+    .btn-home:active {
+      transform: translateY(0);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .small-print {
+      margin-top: 1.4rem;
+      font-size: 0.78rem;
+      color: #6b7280;
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 2rem 1.4rem;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- Usa lo stesso logo del sito principale -->
+    <img
+      src="BlueDolphinWHITE_Sunset.jpg"
+      alt="Blue Dolphin Beach Home logo"
+      class="logo"
+    />
+
+    <h1>Iscrizione confermata 🎉</h1>
+
+    <p>
+      Grazie per esserti iscritto alla
+      <span class="highlight">lista VIP di Blue Dolphin Beach Home</span>.
+    </p>
+    <div class="spacer"></div>
+    <p>
+      Quando apriremo le prenotazioni, sarai tra i primi a ricevere
+      novità su <span class="highlight">date di apertura</span>, offerte in
+      anteprima e suggerimenti per vivere al meglio la tua vacanza in
+      Sardegna.
+    </p>
+
+    <div class="eco-note">
+      <img src="leaf.jpg" alt="Eco friendly" />
+      <span>Ci impegniamo per un soggiorno più sostenibile e attento all’ambiente.</span>
+    </div>
+
+    <div class="button-row">
+      <a href="https://bluedolphinbeachhome.com/" class="btn-home">
+        Torna alla home
+      </a>
+    </div>
+
+    <p class="small-print">
+      Se hai ricevuto questa conferma per errore, puoi ignorare questo messaggio.
+    </p>
+  </div>
+</body>
+</html>
