@@ -22,7 +22,10 @@
   />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://bluedolphinbeachhome.com/" />
-  <meta property="og:image" content="https://bluedolphinbeachhome.com/BlueDolphinWHITE_Sunset.jpg" />
+  <meta
+    property="og:image"
+    content="https://bluedolphinbeachhome.com/BlueDolphinWHITE_Sunset.jpg"
+  />
 
   <!-- Twitter card -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -31,7 +34,10 @@
     name="twitter:description"
     content="We are working on our Sardinian vacation home! See you in 2026. 🐬🌊"
   />
-  <meta name="twitter:image" content="https://bluedolphinbeachhome.com/BlueDolphinWHITE_Sunset.jpg" />
+  <meta
+    name="twitter:image"
+    content="https://bluedolphinbeachhome.com/BlueDolphinWHITE_Sunset.jpg"
+  />
 
   <style>
     * {
@@ -45,13 +51,11 @@
       justify-content: center;
       min-height: 100vh;
       margin: 0;
-      background: #00101a; /* fallback color if video doesn't load */
-      /* allow vertical scroll if card+form is taller than viewport */
+      background: #00101a;
       overflow-x: hidden;
       overflow-y: auto;
     }
 
-    /* Fullscreen background video */
     .bg-video {
       position: fixed;
       top: 0;
@@ -62,7 +66,6 @@
       z-index: -2;
     }
 
-    /* Subtle overlay so the card stands out */
     .bg-overlay {
       position: fixed;
       top: 0;
@@ -73,7 +76,6 @@
       z-index: -1;
     }
 
-    /* Top-right language selector */
     .language-switcher-top {
       position: fixed;
       top: 0.75rem;
@@ -132,7 +134,7 @@
       text-align: center;
       padding: 2.5rem 2rem;
       border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       background: rgba(255, 255, 255, 0.95);
       max-width: 600px;
       margin: 1rem;
@@ -157,7 +159,6 @@
       font-size: 1.1rem;
     }
 
-    /* Signup section styles */
     .signup-section {
       margin-top: 2rem;
       padding-top: 1.5rem;
@@ -210,7 +211,7 @@
     </button>
   </div>
 
-  <!-- Moving ocean video background -->
+  <!-- Background video -->
   <video class="bg-video" autoplay muted loop playsinline>
     <source src="ocean.mp4" type="video/mp4" />
     Your browser does not support the video tag.
@@ -218,7 +219,6 @@
   <div class="bg-overlay"></div>
 
   <div class="card">
-    <!-- Image ABOVE the text -->
     <img
       src="BlueDolphinWHITE_Sunset.jpg"
       alt="Blue Dolphin Beach Home logo"
@@ -229,19 +229,19 @@
     <p data-i18n="tagline1">We are working on our Sardinian vacation home! 🐬🌊</p>
     <p data-i18n="tagline2">See you in 2026!</p>
 
-    <!-- Email signup section -->
     <div class="signup-section">
       <h2 data-i18n="signupTitle">Be the First to Stay at Blue Dolphin Beach Home!</h2>
       <p class="signup-subtext" data-i18n="signupSub">
         Join our pre-launch VIP list for opening dates, early-bird offers, and Sardinia travel tips. No spam, ever.
       </p>
 
-      <!-- Brevo signup form iframe -->
+      <!-- The iframe that will be swapped per language -->
       <iframe
+        id="signupFormFrame"
         class="signup-iframe"
         width="540"
         height="250"
-        src="https://be40dcae.sibforms.com/serve/MUIFAIMKpAnZX5ruXPFPs043FMRsz0De_pE146_ihb2KzU8Bgz5kovZkf8669iCi1o0N1ORnfECZH0MLFe1EMEQ-fCMBk35H8JpM7rWZ4ymLKxCqiOG7BR5WHdOabns_d2PU3VSLM6I32oD0OthyX8ZuVTJiYqww03pF4yhy_BMU9W7W22p73_CkRIiP0GbcuR-6IASc1Yeo7Tg0Mg=="
+        src="https://YOUR_EN_FORM_URL_FROM_BREVO"
         frameborder="0"
         scrolling="auto"
         allowfullscreen
@@ -255,7 +255,6 @@
     </div>
   </div>
 
-  <!-- Simple i18n script -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const translations = {
@@ -274,7 +273,8 @@
           signupSub:
             "Join our pre-launch VIP list for opening dates, early-bird offers, and Sardinia travel tips. No spam, ever.",
           signupDisclaimer:
-            "By subscribing, you agree to receive emails about Blue Dolphin Beach Home and Sardinia travel tips. You can unsubscribe at any time."
+            "By subscribing, you agree to receive emails about Blue Dolphin Beach Home and Sardinia travel tips. You can unsubscribe at any time.",
+          formSrc: " https://be40dcae.sibforms.com/serve/MUIFAIMKpAnZX5ruXPFPs043FMRsz0De_pE146_ihb2KzU8Bgz5kovZkf8669iCi1o0N1ORnfECZH0MLFe1EMEQ-fCMBk35H8JpM7rWZ4ymLKxCqiOG7BR5WHdOabns_d2PU3VSLM6I32oD0OthyX8ZuVTJiYqww03pF4yhy_BMU9W7W22p73_CkRIiP0GbcuR-6IASc1Yeo7Tg0Mg=="
         },
         it: {
           htmlLang: "it",
@@ -291,7 +291,8 @@
           signupSub:
             "Iscriviti alla lista VIP pre-apertura per date di apertura, offerte in anteprima e consigli di viaggio sulla Sardegna. Niente spam, promesso.",
           signupDisclaimer:
-            "Iscrivendoti accetti di ricevere email su Blue Dolphin Beach Home e consigli di viaggio sulla Sardegna. Potrai annullare l’iscrizione in qualsiasi momento."
+            "Iscrivendoti accetti di ricevere email su Blue Dolphin Beach Home e consigli di viaggio sulla Sardegna. Potrai annullare l’iscrizione in qualsiasi momento.",
+          formSrc: "https://be40dcae.sibforms.com/serve/MUIFABnVj953H7P2_GkjRa9SUQOMbAM-QqgBPdU1cpqB5ltMTCgSe0Lz82toCxVA6jAGPbfmGeNCJFfzQYy7ln0jLXJ3rxR-5cwdPmSUkyLG8leZuNliarFWNgG9DO_gySnG7GAC8yhomnvz2tAWSbNc23hXwm3n46KBTGq_wxxtXSflLXDQAAe6yZt8uIfpFixJW_eu6J3c7EyWIA=="
         },
         de: {
           htmlLang: "de",
@@ -309,7 +310,8 @@
           signupSub:
             "Tragen Sie sich in unsere VIP-Liste vor der Eröffnung ein und erhalten Sie Öffnungstermine, Frühbucher-Angebote und Reisetipps für Sardinien. Kein Spam, versprochen.",
           signupDisclaimer:
-            "Mit Ihrer Anmeldung erklären Sie sich einverstanden, E-Mails zum Blue Dolphin Beach Home und zu Reisetipps für Sardinien zu erhalten. Sie können sich jederzeit abmelden."
+            "Mit Ihrer Anmeldung erklären Sie sich einverstanden, E-Mails zum Blue Dolphin Beach Home und zu Reisetipps für Sardinien zu erhalten. Sie können sich jederzeit abmelden.",
+          formSrc: "https://be40dcae.sibforms.com/serve/MUIFAAzPb9A4-Vd2EoWbmU2wl1SfVBD9VuADIbsvwPXIonl78nRlKptKFLxnDoA8lwwCDlVQv7Vgi9OBQzO7RkHAltMwe5AR5dXpU0iZPedt60eauRsmaztEMnE14L2LX33mTGTTv_mOgbBQr-hMtJGHvrcQUFzUgguxmvmjZCHMd9Sit2uWPm6vYqdyRBkl1KdgOhc4VV_RUKyr7A=="
         },
         fr: {
           htmlLang: "fr",
@@ -328,7 +330,8 @@
           signupSub:
             "Rejoignez notre liste VIP de pré-ouverture pour recevoir les dates d’ouverture, les offres en avant-première et des conseils de voyage en Sardaigne. Jamais de spam.",
           signupDisclaimer:
-            "En vous inscrivant, vous acceptez de recevoir des e-mails concernant Blue Dolphin Beach Home et des conseils de voyage en Sardaigne. Vous pouvez vous désabonner à tout moment."
+            "En vous inscrivant, vous acceptez de recevoir des e-mails concernant Blue Dolphin Beach Home et des conseils de voyage en Sardaigne. Vous pouvez vous désabonner à tout moment.",
+          formSrc: "https://be40dcae.sibforms.com/serve/MUIFALwv6VTlA3OwhCn1g2noKKk1AA2VpdRWfIZuinkv71yymNoIO9e6JKRDy1O1EZ043XMgsTgYDSx6EFkgwmK2ZbpR_Xj5iTHk3Hhzu4Qmh9c1MDzpl7kB7nCFYd3cXIsZWqDVIP9HwlON54nfKcnZXjqEU0EdCJkXlLFrvCWZYpZXXFCsLZl8_uh58_A5TzqjiNp0CgjZYMHDrQ=="
         }
       };
 
@@ -342,16 +345,15 @@
         signupDisclaimer: document.querySelector('[data-i18n="signupDisclaimer"]'),
         metaDescription: document.querySelector('meta[name="description"]'),
         ogDescription: document.querySelector('meta[property="og:description"]'),
-        twitterDescription: document.querySelector('meta[name="twitter:description"]')
+        twitterDescription: document.querySelector('meta[name="twitter:description"]'),
+        formFrame: document.getElementById("signupFormFrame")
       };
 
       function setLanguage(lang) {
         const t = translations[lang] || translations.en;
 
-        // HTML lang attribute
         if (el.html) el.html.lang = t.htmlLang || "en";
 
-        // Main text content
         if (el.heading) el.heading.textContent = t.heading;
         if (el.tagline1) el.tagline1.textContent = t.tagline1;
         if (el.tagline2) el.tagline2.textContent = t.tagline2;
@@ -359,7 +361,6 @@
         if (el.signupSub) el.signupSub.textContent = t.signupSub;
         if (el.signupDisclaimer) el.signupDisclaimer.textContent = t.signupDisclaimer;
 
-        // SEO metadata
         if (el.metaDescription) {
           el.metaDescription.setAttribute("content", t.metaDescription);
         }
@@ -370,22 +371,22 @@
           el.twitterDescription.setAttribute("content", t.twitterDescription);
         }
 
-        // Active button state
+        // 🔁 Swap Brevo form iframe based on language
+        if (el.formFrame && t.formSrc) {
+          el.formFrame.setAttribute("src", t.formSrc);
+        }
+
         document
           .querySelectorAll(".language-switcher-top .lang-btn")
           .forEach((btn) => {
             btn.classList.toggle("active", btn.dataset.lang === lang);
           });
 
-        // Remember preference
         try {
           localStorage.setItem("bd_lang", lang);
-        } catch (e) {
-          // ignore if storage disabled
-        }
+        } catch (e) {}
       }
 
-      // Determine initial language: stored preference > browser language > EN
       let initialLang = "en";
       try {
         const stored = localStorage.getItem("bd_lang");
@@ -397,13 +398,10 @@
             initialLang = browser;
           }
         }
-      } catch (e) {
-        // if anything goes wrong, just use English
-      }
+      } catch (e) {}
 
       setLanguage(initialLang);
 
-      // Hook up buttons
       document
         .querySelectorAll(".language-switcher-top .lang-btn")
         .forEach((btn) => {
