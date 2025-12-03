@@ -175,10 +175,6 @@
       margin: 0 0 0.7rem;
       color: #333;
       line-height: 1.4;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.4rem; /* space between text and leaf icon */
     }
 
     .signup-section p.signup-disclaimer {
@@ -186,6 +182,10 @@
       margin-top: 0.55rem;
       color: #666;
       line-height: 1.3;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem; /* space between disclaimer text and leaf icon */
     }
 
     .signup-iframe {
@@ -247,11 +247,8 @@
 
     <div class="signup-section">
       <h2 data-i18n="signupTitle">Be the First to Stay at Blue Dolphin Beach Home!</h2>
-      <p class="signup-subtext">
-        <span data-i18n="signupSub">
-          Join our pre-launch VIP list for opening dates, early-bird offers, and Sardinia travel tips. No spam, ever.
-        </span>
-        <img src="leaf.jpg" alt="Eco-friendly" class="eco-icon" />
+      <p class="signup-subtext" data-i18n="signupSub">
+        Join our pre-launch VIP list for opening dates, early-bird offers, and Sardinia travel tips. No spam, ever.
       </p>
 
       <!-- The iframe that will be swapped per language -->
@@ -267,9 +264,12 @@
         style="max-width: 100%;"
       ></iframe>
 
-      <p class="signup-disclaimer" data-i18n="signupDisclaimer">
-        By subscribing, you agree to receive emails about Blue Dolphin Beach Home and Sardinia travel tips.
-        You can unsubscribe at any time.
+      <p class="signup-disclaimer">
+        <span data-i18n="signupDisclaimer">
+          By subscribing, you agree to receive emails about Blue Dolphin Beach Home and Sardinia travel tips.
+          You can unsubscribe at any time.
+        </span>
+        <img src="leaf.jpg" alt="Eco-friendly" class="eco-icon" />
       </p>
     </div>
   </div>
