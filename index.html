@@ -40,6 +40,7 @@
       /* allow vertical scroll if card+form is taller than viewport */
       overflow-x: hidden;
       overflow-y: auto;
+      color: #000;
     }
 
     /* Fullscreen background video */
@@ -178,6 +179,24 @@
       margin-right: auto;
       max-width: 100%;
     }
+
+    /* Privacy link just below the box, centered */
+    .privacy-footer {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .privacy-footer a {
+      color: #e5f3ff;
+      font-size: 0.85rem;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+    }
+
+    .privacy-footer a:hover {
+      color: #ffffff;
+    }
   </style>
 </head>
 <body>
@@ -208,37 +227,46 @@
   </video>
   <div class="bg-overlay"></div>
 
-  <div class="card">
-    <!-- Image ABOVE the text -->
-    <img src="BlueDolphinWHITE_Sunset.jpg" alt="Blue Dolphin Beach Home logo" class="logo" />
+  <div>
+    <div class="card">
+      <!-- Image ABOVE the text -->
+      <img src="BlueDolphinWHITE_Sunset.jpg" alt="Blue Dolphin Beach Home logo" class="logo" />
 
-    <h1>Blue Dolphin Beach Home</h1>
-    <p>We are working on our Sardinian vacation home! 🐬🌊</p>
-    <p>See you in 2026!</p>
+      <h1>Blue Dolphin Beach Home</h1>
+      <p>We are working on our Sardinian vacation home! 🐬🌊</p>
+      <p>See you in 2026!</p>
 
-    <!-- Email signup section -->
-    <div class="signup-section">
-      <h2>Be the First to Stay at Blue Dolphin Beach Home!</h2>
-      <p class="signup-subtext">
-        Join our pre-launch VIP list for opening dates, early-bird offers, and Sardinia travel tips. No spam, ever.
-      </p>
+      <!-- Email signup section -->
+      <div class="signup-section">
+        <h2>Be the First to Stay at Blue Dolphin Beach Home!</h2>
+        <p class="signup-subtext">
+          Join our pre-launch VIP list for opening dates, early-bird offers, and Sardinia travel tips. No spam, ever.
+        </p>
 
-      <!-- Brevo signup form iframe -->
-      <iframe
-        class="signup-iframe"
-        width="540"
-        height="250"
-        src="https://be40dcae.sibforms.com/serve/MUIFAIMKpAnZX5ruXPFPs043FMRsz0De_pE146_ihb2KzU8Bgz5kovZkf8669iCi1o0N1ORnfECZH0MLFe1EMEQ-fCMBk35H8JpM7rWZ4ymLKxCqiOG7BR5WHdOabns_d2PU3VSLM6I32oD0OthyX8ZuVTJiYqww03pF4yhy_BMU9W7W22p73_CkRIiP0GbcuR-6IASc1Yeo7Tg0Mg=="
-        frameborder="0"
-        scrolling="auto"
-        allowfullscreen
-        style="max-width: 100%;"
-      ></iframe>
+        <!-- Brevo signup form iframe -->
+        <iframe
+          class="signup-iframe"
+          width="540"
+          height="250"
+          src="https://be40dcae.sibforms.com/serve/MUIFAIMKpAnZX5ruXPFPs043FMRsz0De_pE146_ihb2KzU8Bgz5kovZkf8669iCi1o0N1ORnfECZH0MLFe1EMEQ-fCMBk35H8JpM7rWZ4ymLKxCqiOG7BR5WHdOabns_d2PU3VSLM6I32oD0OthyX8ZuVTJiYqww03pF4yhy_BMU9W7W22p73_CkRIiP0GbcuR-6IASc1Yeo7Tg0Mg=="
+          frameborder="0"
+          scrolling="auto"
+          allowfullscreen
+          style="max-width: 100%;"
+        ></iframe>
 
-      <p class="signup-disclaimer">
-        By subscribing, you agree to receive emails about Blue Dolphin Beach Home and Sardinia travel tips.
-        You can unsubscribe at any time.
-      </p>
+        <p class="signup-disclaimer">
+          By subscribing, you agree to receive emails about Blue Dolphin Beach Home and Sardinia travel tips.
+          You can unsubscribe at any time.
+        </p>
+      </div>
+    </div>
+
+    <!-- Centered privacy link just below the box -->
+    <div class="privacy-footer">
+      <a href="/privacy.html" target="_blank" rel="noopener noreferrer">
+        Privacy Policy
+      </a>
     </div>
   </div>
 </body>
