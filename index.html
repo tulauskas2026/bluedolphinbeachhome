@@ -202,19 +202,19 @@
 <body>
   <!-- Top-right language selector -->
   <div class="language-switcher-top">
-    <button class="lang-btn active" type="button">
+    <button class="lang-btn active" type="button" data-lang="en">
       <img src="flag-en.png" alt="English" class="flag-icon" />
       <span class="code">EN</span>
     </button>
-    <button class="lang-btn" type="button">
+    <button class="lang-btn" type="button" data-lang="it">
       <img src="flag-it.png" alt="Italiano" class="flag-icon" />
       <span class="code">IT</span>
     </button>
-    <button class="lang-btn" type="button">
+    <button class="lang-btn" type="button" data-lang="de">
       <img src="flag-de.png" alt="Deutsch" class="flag-icon" />
       <span class="code">DE</span>
     </button>
-    <button class="lang-btn" type="button">
+    <button class="lang-btn" type="button" data-lang="fr">
       <img src="flag-fr.png" alt="Français" class="flag-icon" />
       <span class="code">FR</span>
     </button>
@@ -264,10 +264,104 @@
 
     <!-- Centered privacy link just below the box -->
     <div class="privacy-footer">
-      <a href="/privacy.html" target="_blank" rel="noopener noreferrer">
+      <a
+        id="privacyLink"
+        href="/privacy.html"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         Privacy Policy
       </a>
     </div>
   </div>
+
+  <script>
+    (function () {
+      const SUPPORTED_LANGS = ["en", "it", "de", "fr"];
+
+      const PRIVACY_MAP = {
+        en: {
+          href: "/privacy.html",
+          text: "Privacy Policy"
+        },
+        it: {
+          href: "/privacy-it.html",
+          text: "Informativa sulla privacy"
+        },
+        de: {
+          href: "/privacy-de.html",
+          text: "Datenschutzerklärung"
+        },
+        fr: {
+          href: "/privacy-fr.html",
+          text: "Politique de confidentialité"
+        }
+      };
+
+      function normalizeLang(code) {
+        if (!code) return null;
+        const lower = code.toLowerCase();
+        const base = lower.split(/[-_]/)[0];
+        return SUPPORTED_LANGS.includes(base) ? base : null;
+      }
+
+      function getInitialLang() {
+        // Try browser language first
+        const candidates = [];
+
+        if (Array.isArray(navigator.languages)) {
+          candidates.push(...navigator.languages);
+        }
+        if (navigator.language) {
+          candidates.push(navigator.language);
+        }
+
+        for (const c of candidates) {
+          const normalized = normalizeLang(c);
+          if (normalized) return normalized;
+        }
+
+        return "en";
+      }
+
+      function setPrivacyForLang(lang) {
+        const link = document.getElementById("privacyLink");
+        if (!link) return;
+
+        const config = PRIVACY_MAP[lang] || PRIVACY_MAP.en;
+        link.href = config.href;
+        link.textContent = config.text;
+      }
+
+      function setActiveButton(lang) {
+        document
+          .querySelectorAll(".language-switcher-top .lang-btn")
+          .forEach((btn) => {
+            const btnLang = btn.getAttribute("data-lang");
+            if (btnLang === lang) {
+              btn.classList.add("active");
+            } else {
+              btn.classList.remove("active");
+            }
+          });
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const initialLang = getInitialLang();
+        setPrivacyForLang(initialLang);
+        setActiveButton(initialLang);
+
+        document
+          .querySelectorAll(".language-switcher-top .lang-btn")
+          .forEach((btn) => {
+            btn.addEventListener("click", function () {
+              const lang = this.getAttribute("data-lang") || "en";
+              setPrivacyForLang(lang);
+              setActiveButton(lang);
+            });
+          });
+      });
+    })();
+  </script>
 </body>
 </html>
