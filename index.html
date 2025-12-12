@@ -6,23 +6,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Basic SEO -->
-  <meta name="description" content="Blue Dolphin Beach Home – a Sardinian vacation home near the beach, opening for guests in 2026." />
+  <meta
+    name="description"
+    content="Blue Dolphin Beach Home – a Sardinian vacation home near the beach, opening for guests in 2026."
+  />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png" />
 
   <!-- Open Graph (for nice previews on WhatsApp, Facebook, etc.) -->
   <meta property="og:title" content="Blue Dolphin Beach Home" />
-  <meta property="og:description" content="We are working on our Sardinian vacation home! See you in 2026. 🐬🌊" />
+  <meta
+    property="og:description"
+    content="We are working on our Sardinian vacation home! See you in 2026. 🐬🌊"
+  />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://bluedolphinbeachhome.com/" />
-  <meta property="og:image" content="https://bluedolphinbeachhome.com/BlueDolphinWHITE_Sunset.jpg" />
+  <meta
+    property="og:image"
+    content="https://bluedolphinbeachhome.com/BlueDolphinWHITE_Sunset.jpg"
+  />
 
   <!-- Twitter card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Blue Dolphin Beach Home" />
-  <meta name="twitter:description" content="We are working on our Sardinian vacation home! See you in 2026. 🐬🌊" />
-  <meta name="twitter:image" content="https://bluedolphinbeachhome.com/BlueDolphinWHITE_Sunset.jpg" />
+  <meta
+    name="twitter:description"
+    content="We are working on our Sardinian vacation home! See you in 2026. 🐬🌊"
+  />
+  <meta
+    name="twitter:image"
+    content="https://bluedolphinbeachhome.com/BlueDolphinWHITE_Sunset.jpg"
+  />
 
   <style>
     * {
@@ -37,7 +52,6 @@
       min-height: 100vh;
       margin: 0;
       background: #00101a; /* fallback color if video doesn't load */
-      /* allow vertical scroll if card+form is taller than viewport */
       overflow-x: hidden;
       overflow-y: auto;
       color: #000;
@@ -230,21 +244,31 @@
   <div>
     <div class="card">
       <!-- Image ABOVE the text -->
-      <img src="BlueDolphinWHITE_Sunset.jpg" alt="Blue Dolphin Beach Home logo" class="logo" />
+      <img
+        src="BlueDolphinWHITE_Sunset.jpg"
+        alt="Blue Dolphin Beach Home logo"
+        class="logo"
+      />
 
-      <h1>Blue Dolphin Beach Home</h1>
-      <p>We are working on our Sardinian vacation home! 🐬🌊</p>
-      <p>See you in 2026!</p>
+      <h1 data-i18n="heading">Blue Dolphin Beach Home</h1>
+      <p data-i18n="tagline1">
+        We are working on our Sardinian vacation home! 🐬🌊
+      </p>
+      <p data-i18n="tagline2">See you in 2026!</p>
 
       <!-- Email signup section -->
       <div class="signup-section">
-        <h2>Be the First to Stay at Blue Dolphin Beach Home!</h2>
-        <p class="signup-subtext">
-          Join our pre-launch VIP list for opening dates, early-bird offers, and Sardinia travel tips. No spam, ever.
+        <h2 data-i18n="signupTitle">
+          Be the First to Stay at Blue Dolphin Beach Home!
+        </h2>
+        <p class="signup-subtext" data-i18n="signupSub">
+          Join our pre-launch VIP list for opening dates, early-bird offers, and
+          Sardinia travel tips. No spam, ever.
         </p>
 
         <!-- Brevo signup form iframe -->
         <iframe
+          id="signupForm"
           class="signup-iframe"
           width="540"
           height="250"
@@ -255,9 +279,9 @@
           style="max-width: 100%;"
         ></iframe>
 
-        <p class="signup-disclaimer">
-          By subscribing, you agree to receive emails about Blue Dolphin Beach Home and Sardinia travel tips.
-          You can unsubscribe at any time.
+        <p class="signup-disclaimer" data-i18n="signupDisclaimer">
+          By subscribing, you agree to receive emails about Blue Dolphin Beach
+          Home and Sardinia travel tips. You can unsubscribe at any time.
         </p>
       </div>
     </div>
@@ -279,22 +303,96 @@
     (function () {
       const SUPPORTED_LANGS = ["en", "it", "de", "fr"];
 
-      const PRIVACY_MAP = {
+      const translations = {
         en: {
-          href: "/privacy.html",
-          text: "Privacy Policy"
+          htmlLang: "en",
+          heading: "Blue Dolphin Beach Home",
+          tagline1: "We are working on our Sardinian vacation home! 🐬🌊",
+          tagline2: "See you in 2026!",
+          signupTitle: "Be the First to Stay at Blue Dolphin Beach Home!",
+          signupSub:
+            "Join our pre-launch VIP list for opening dates, early-bird offers, and Sardinia travel tips. No spam, ever.",
+          signupDisclaimer:
+            "By subscribing, you agree to receive emails about Blue Dolphin Beach Home and Sardinia travel tips. You can unsubscribe at any time.",
+          privacyHref: "/privacy.html",
+          privacyText: "Privacy Policy",
+          metaDescription:
+            "Blue Dolphin Beach Home – a Sardinian vacation home near the beach, opening for guests in 2026.",
+          ogDescription:
+            "We are working on our Sardinian vacation home! See you in 2026. 🐬🌊",
+          twitterDescription:
+            "We are working on our Sardinian vacation home! See you in 2026. 🐬🌊",
+          formSrc:
+            "https://be40dcae.sibforms.com/serve/MUIFAIMKpAnZX5ruXPFPs043FMRsz0De_pE146_ihb2KzU8Bgz5kovZkf8669iCi1o0N1ORnfECZH0MLFe1EMEQ-fCMBk35H8JpM7rWZ4ymLKxCqiOG7BR5WHdOabns_d2PU3VSLM6I32oD0OthyX8ZuVTJiYqww03pF4yhy_BMU9W7W22p73_CkRIiP0GbcuR-6IASc1Yeo7Tg0Mg=="
         },
         it: {
-          href: "/privacy-it.html",
-          text: "Informativa sulla privacy"
+          htmlLang: "it",
+          heading: "Blue Dolphin Beach Home",
+          tagline1:
+            "Stiamo lavorando alla nostra casa vacanze in Sardegna! 🐬🌊",
+          tagline2: "Ti aspettiamo nel 2026!",
+          signupTitle:
+            "Sii il primo a soggiornare al Blue Dolphin Beach Home!",
+          signupSub:
+            "Iscriviti alla lista VIP pre-apertura per date di apertura, offerte in anteprima e consigli di viaggio sulla Sardegna. Niente spam, promesso.",
+          signupDisclaimer:
+            "Iscrivendoti, accetti di ricevere e-mail su Blue Dolphin Beach Home e consigli di viaggio sulla Sardegna. Puoi annullare l’iscrizione in qualsiasi momento.",
+          privacyHref: "/privacy-it.html",
+          privacyText: "Informativa sulla privacy",
+          metaDescription:
+            "Blue Dolphin Beach Home – una casa vacanze in Sardegna vicino al mare, apertura agli ospiti nel 2026.",
+          ogDescription:
+            "Stiamo lavorando alla nostra casa vacanze in Sardegna! Ti aspettiamo nel 2026. 🐬🌊",
+          twitterDescription:
+            "Stiamo lavorando alla nostra casa vacanze in Sardegna! Ti aspettiamo nel 2026. 🐬🌊",
+          formSrc:
+            "https://be40dcae.sibforms.com/serve/MUIFABnVj953H7P2_GkjRa9SUQOMbAM-QqgBPdU1cpqB5ltMTCgSe0Lz82toCxVA6jAGPbfmGeNCJFfzQYy7ln0jLXJ3rxR-5cwdPmSUkyLG8leZuNliarFWNgG9DO_gySnG7GAC8yhomnvz2tAWSbNc23hXwm3n46KBTGq_wxxtXSflLXDQAAe6yZt8uIfpFixJW_eu6J3c7EyWIA=="
         },
         de: {
-          href: "/privacy-de.html",
-          text: "Datenschutzerklärung"
+          htmlLang: "de",
+          heading: "Blue Dolphin Beach Home",
+          tagline1:
+            "Wir arbeiten an unserem Ferienhaus auf Sardinien! 🐬🌊",
+          tagline2: "Wir sehen uns 2026!",
+          signupTitle:
+            "Seien Sie die Ersten, die im Blue Dolphin Beach Home übernachten!",
+          signupSub:
+            "Tragen Sie sich in unsere VIP-Liste vor der Eröffnung ein und erhalten Sie Öffnungstermine, Frühbucher-Angebote und Reisetipps für Sardinien. Kein Spam, versprochen.",
+          signupDisclaimer:
+            "Mit Ihrer Anmeldung stimmen Sie dem Erhalt von E-Mails über Blue Dolphin Beach Home und Reisetipps für Sardinien zu. Sie können sich jederzeit abmelden.",
+          privacyHref: "/privacy-de.html",
+          privacyText: "Datenschutzerklärung",
+          metaDescription:
+            "Blue Dolphin Beach Home – ein Ferienhaus auf Sardinien in Strandnähe, eröffnet für Gäste im Jahr 2026.",
+          ogDescription:
+            "Wir arbeiten an unserem Ferienhaus auf Sardinien! Wir sehen uns 2026. 🐬🌊",
+          twitterDescription:
+            "Wir arbeiten an unserem Ferienhaus auf Sardinien! Wir sehen uns 2026. 🐬🌊",
+          formSrc:
+            "https://be40dcae.sibforms.com/serve/MUIFAAzPb9A4-Vd2EoWbmU2wl1SfVBD9VuADIbsvwPXIonl78nRlKptKFLxnDoA8lwwCDlVQv7Vgi9OBQzO7RkHAltMwe5AR5dXpU0iZPedt60eauRsmaztEMnE14L2LX33mTGTTv_mOgbBQr-hMtJGHvrcQUFzUgguxmvmjZCHMd9Sit2uWPm6vYqdyRBkl1KdgOhc4VV_RUKyr7A=="
         },
         fr: {
-          href: "/privacy-fr.html",
-          text: "Politique de confidentialité"
+          htmlLang: "fr",
+          heading: "Blue Dolphin Beach Home",
+          tagline1:
+            "Nous préparons notre maison de vacances en Sardaigne ! 🐬🌊",
+          tagline2: "À très bientôt en 2026 !",
+          signupTitle:
+            "Soyez parmi les premiers à séjourner au Blue Dolphin Beach Home !",
+          signupSub:
+            "Rejoignez notre liste VIP de pré-ouverture pour recevoir les dates d’ouverture, les offres en avant-première et des conseils de voyage en Sardaigne. Jamais de spam.",
+          signupDisclaimer:
+            "En vous inscrivant, vous acceptez de recevoir des e-mails au sujet de Blue Dolphin Beach Home et de conseils de voyage en Sardaigne. Vous pouvez vous désabonner à tout moment.",
+          privacyHref: "/privacy-fr.html",
+          privacyText: "Politique de confidentialité",
+          metaDescription:
+            "Blue Dolphin Beach Home – une maison de vacances en Sardaigne près de la plage, ouvrant aux invités en 2026.",
+          ogDescription:
+            "Nous préparons notre maison de vacances en Sardaigne ! À très bientôt en 2026. 🐬🌊",
+          twitterDescription:
+            "Nous préparons notre maison de vacances en Sardaigne ! À très bientôt en 2026. 🐬🌊",
+          formSrc:
+            "https://be40dcae.sibforms.com/serve/MUIFALwv6VTlA3OwhCn1g2noKKk1AA2VpdRWfIZuinkv71yymNoIO9e6JKRDy1O1EZ043XMgsTgYDSx6EFkgwmK2ZbpR_Xj5iTHk3Hhzu4Qmh9c1MDzpl7kB7nCFYd3cXIsZWqDVIP9HwlON54nfKcnZXjqEU0EdCJkXlLFrvCWZYpZXXFCsLZl8_uh58_A5TzqjiNp0CgjZYMHDrQ=="
         }
       };
 
@@ -305,32 +403,34 @@
         return SUPPORTED_LANGS.includes(base) ? base : null;
       }
 
-      function getInitialLang() {
-        // Try browser language first
-        const candidates = [];
+      function getStoredLang() {
+        try {
+          const stored = localStorage.getItem("bd_lang");
+          return normalizeLang(stored);
+        } catch (e) {
+          return null;
+        }
+      }
 
+      function getBrowserLang() {
+        const candidates = [];
         if (Array.isArray(navigator.languages)) {
           candidates.push(...navigator.languages);
         }
         if (navigator.language) {
           candidates.push(navigator.language);
         }
-
         for (const c of candidates) {
-          const normalized = normalizeLang(c);
-          if (normalized) return normalized;
+          const norm = normalizeLang(c);
+          if (norm) return norm;
         }
-
         return "en";
       }
 
-      function setPrivacyForLang(lang) {
-        const link = document.getElementById("privacyLink");
-        if (!link) return;
-
-        const config = PRIVACY_MAP[lang] || PRIVACY_MAP.en;
-        link.href = config.href;
-        link.textContent = config.text;
+      function detectInitialLang() {
+        const fromStorage = getStoredLang();
+        if (fromStorage) return fromStorage;
+        return getBrowserLang();
       }
 
       function setActiveButton(lang) {
@@ -346,18 +446,73 @@
           });
       }
 
+      function applyLanguage(lang, persist) {
+        const t = translations[lang] || translations.en;
+
+        // html lang
+        document.documentElement.lang = t.htmlLang || "en";
+
+        // Text nodes
+        const headingEl = document.querySelector('[data-i18n="heading"]');
+        const tagline1El = document.querySelector('[data-i18n="tagline1"]');
+        const tagline2El = document.querySelector('[data-i18n="tagline2"]');
+        const signupTitleEl = document.querySelector('[data-i18n="signupTitle"]');
+        const signupSubEl = document.querySelector('[data-i18n="signupSub"]');
+        const signupDisclaimerEl = document.querySelector(
+          '[data-i18n="signupDisclaimer"]'
+        );
+        const privacyLink = document.getElementById("privacyLink");
+        const formFrame = document.getElementById("signupForm");
+
+        if (headingEl) headingEl.textContent = t.heading;
+        if (tagline1El) tagline1El.textContent = t.tagline1;
+        if (tagline2El) tagline2El.textContent = t.tagline2;
+        if (signupTitleEl) signupTitleEl.textContent = t.signupTitle;
+        if (signupSubEl) signupSubEl.textContent = t.signupSub;
+        if (signupDisclaimerEl) signupDisclaimerEl.textContent = t.signupDisclaimer;
+
+        if (privacyLink) {
+          privacyLink.href = t.privacyHref;
+          privacyLink.textContent = t.privacyText;
+        }
+
+        if (formFrame && t.formSrc) {
+          if (formFrame.src !== t.formSrc) {
+            formFrame.src = t.formSrc;
+          }
+        }
+
+        // Meta tags
+        const metaDesc = document.querySelector('meta[name="description"]');
+        const ogDesc = document.querySelector(
+          'meta[property="og:description"]'
+        );
+        const twDesc = document.querySelector(
+          'meta[name="twitter:description"]'
+        );
+        if (metaDesc) metaDesc.setAttribute("content", t.metaDescription);
+        if (ogDesc) ogDesc.setAttribute("content", t.ogDescription);
+        if (twDesc) twDesc.setAttribute("content", t.twitterDescription);
+
+        setActiveButton(lang);
+
+        if (persist) {
+          try {
+            localStorage.setItem("bd_lang", lang);
+          } catch (e) {}
+        }
+      }
+
       document.addEventListener("DOMContentLoaded", function () {
-        const initialLang = getInitialLang();
-        setPrivacyForLang(initialLang);
-        setActiveButton(initialLang);
+        const initialLang = detectInitialLang();
+        applyLanguage(initialLang, false);
 
         document
           .querySelectorAll(".language-switcher-top .lang-btn")
           .forEach((btn) => {
             btn.addEventListener("click", function () {
               const lang = this.getAttribute("data-lang") || "en";
-              setPrivacyForLang(lang);
-              setActiveButton(lang);
+              applyLanguage(lang, true);
             });
           });
       });
