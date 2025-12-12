@@ -6,38 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Basic SEO -->
-  <meta
-    name="description"
-    content="Blue Dolphin Beach Home – a Sardinian vacation home near the beach, opening for guests in 2026."
-  />
+  <meta name="description" content="Blue Dolphin Beach Home – a Sardinian vacation home near the beach, opening for guests in 2026." />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png" />
 
   <!-- Open Graph (for nice previews on WhatsApp, Facebook, etc.) -->
   <meta property="og:title" content="Blue Dolphin Beach Home" />
-  <meta
-    property="og:description"
-    content="We are working on our Sardinian vacation home! See you in 2026. 🐬🌊"
-  />
+  <meta property="og:description" content="We are working on our Sardinian vacation home! See you in 2026. 🐬🌊" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://bluedolphinbeachhome.com/" />
-  <meta
-    property="og:image"
-    content="https://bluedolphinbeachhome.com/BlueDolphinWHITE_Sunset.jpg"
-  />
+  <meta property="og:image" content="https://bluedolphinbeachhome.com/BlueDolphinWHITE_Sunset.jpg" />
 
-  <!-- Twitter Card -->
+  <!-- Twitter card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Blue Dolphin Beach Home" />
-  <meta
-    name="twitter:description"
-    content="We are working on our Sardinian vacation home! See you in 2026. 🐬🌊"
-  />
-  <meta
-    name="twitter:image"
-    content="https://bluedolphinbeachhome.com/BlueDolphinWHITE_Sunset.jpg"
-  />
+  <meta name="twitter:description" content="We are working on our Sardinian vacation home! See you in 2026. 🐬🌊" />
+  <meta name="twitter:image" content="https://bluedolphinbeachhome.com/BlueDolphinWHITE_Sunset.jpg" />
 
   <style>
     * {
@@ -51,11 +36,13 @@
       justify-content: center;
       min-height: 100vh;
       margin: 0;
-      background: #00101a;
+      background: #00101a; /* fallback color if video doesn't load */
+      /* allow vertical scroll if card+form is taller than viewport */
       overflow-x: hidden;
       overflow-y: auto;
     }
 
+    /* Fullscreen background video */
     .bg-video {
       position: fixed;
       top: 0;
@@ -66,22 +53,18 @@
       z-index: -2;
     }
 
+    /* Subtle overlay so the card stands out */
     .bg-overlay {
       position: fixed;
-      inset: 0;
-      background: radial-gradient(
-          circle at top,
-          rgba(255, 255, 255, 0.12),
-          transparent 55%
-        ),
-        linear-gradient(
-          to bottom,
-          rgba(0, 0, 30, 0.85),
-          rgba(0, 0, 0, 0.95)
-        );
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.35);
       z-index: -1;
     }
 
+    /* Top-right language selector */
     .language-switcher-top {
       position: fixed;
       top: 0.75rem;
@@ -121,202 +104,104 @@
       height: 18px;
       border-radius: 50%;
       object-fit: cover;
-      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
-    }
-
-    .language-switcher-top .lang-btn.active {
-      opacity: 1;
-      background: #ffffff;
-      transform: translateY(-1px);
+      display: block;
     }
 
     .language-switcher-top .lang-btn:hover {
       opacity: 1;
-      background: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    .language-switcher-top .lang-btn.active {
+      background: #0077b6;
+      color: #ffffff;
+      opacity: 1;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
     }
 
     .card {
-      position: relative;
-      max-width: 520px;
-      width: 90%;
-      margin: 3rem auto;
-      padding: 1.75rem 1.75rem 1.8rem;
-      border-radius: 24px;
-      background: rgba(0, 8, 20, 0.9);
-      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65);
-      color: #f9fbff;
-      border: 1px solid rgba(255, 255, 255, 0.08);
       text-align: center;
+      padding: 2.5rem 2rem;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      background: rgba(255, 255, 255, 0.95);
+      max-width: 600px;
+      margin: 1rem;
+      position: relative;
+      z-index: 1;
     }
 
     .logo {
-      display: block;
-      margin: 0 auto 0.75rem;
-      max-width: 260px;
-      width: 70%;
+      max-width: 200px;
       height: auto;
-      border-radius: 16px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+      display: block;
+      margin: 0 auto 1.5rem;
     }
 
     h1 {
-      margin: 0 0 0.4rem;
-      font-size: clamp(1.7rem, 2.15vw, 2.1rem);
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: #e4f2ff;
+      margin-bottom: 0.75rem;
+      font-size: 1.9rem;
     }
 
     p {
       margin: 0;
+      font-size: 1.1rem;
     }
 
-    .tagline {
-      font-size: 0.95rem;
-      margin-bottom: 0.4rem;
-      color: #dfe9ff;
-    }
-
-    .tagline-2 {
-      font-size: 1.05rem;
-      font-weight: 600;
-      margin-bottom: 1.2rem;
-      color: #f5f9ff;
-    }
-
-    .highlight {
-      color: #7cdfff;
-      font-weight: 600;
-    }
-
+    /* Signup section styles */
     .signup-section {
-      margin-top: 1.2rem;
-      padding: 1.1rem 1.1rem 0.9rem;
-      border-radius: 16px;
-      background: linear-gradient(
-          135deg,
-          rgba(35, 124, 255, 0.35),
-          rgba(127, 216, 255, 0.08)
-        ),
-        rgba(2, 20, 40, 0.9);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
-      text-align: left;
-      border: 1px solid rgba(124, 223, 255, 0.35);
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
     }
 
     .signup-section h2 {
-      margin: 0 0 0.4rem;
-      font-size: 1.05rem;
-      color: #f7fbff;
+      margin: 0 0 0.5rem;
+      font-size: 1.4rem;
     }
 
-    .signup-subtext {
-      margin: 0 0 0.6rem;
-      font-size: 0.9rem;
-      color: #e3f4ff;
-      line-height: 1.4;
+    .signup-section p.signup-subtext {
+      font-size: 0.98rem;
+      margin: 0 0 1.2rem;
+      color: #333;
     }
 
-    .signup-disclaimer {
-      margin-top: 0.6rem;
-      font-size: 0.75rem;
-      color: #d5e5ff;
-      line-height: 1.4;
-    }
-
-    .signup-disclaimer a {
-      color: #d5f1ff;
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
+    .signup-section p.signup-disclaimer {
+      font-size: 0.8rem;
+      margin-top: 0.75rem;
+      color: #666;
     }
 
     .signup-iframe {
-      border-radius: 10px;
-      overflow: hidden;
-      margin-top: 0.25rem;
-    }
-
-    .eco-badge img {
       display: block;
       margin-left: auto;
       margin-right: auto;
-      margin-top: 0.1rem;
-      margin-bottom: 0.1rem;
       max-width: 100%;
-    }
-
-    .eco-badge {
-      margin-top: 0.35rem;
-      display: flex;
-      justify-content: center;
-    }
-
-    .eco-icon {
-      width: 18px;
-      height: 18px;
-      border-radius: 999px;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-
-    .lang-toast {
-      position: fixed;
-      bottom: 1rem;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(0, 0, 0, 0.8);
-      color: #ffffff;
-      padding: 0.4rem 0.9rem;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      z-index: 10;
-      display: none;
-      align-items: center;
-      gap: 0.5rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    }
-
-    .lang-toast.show {
-      display: flex;
-    }
-
-    .lang-toast button {
-      background: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.7);
-      border-radius: 999px;
-      padding: 0.1rem 0.6rem;
-      color: inherit;
-      font-size: 0.75rem;
-      cursor: pointer;
-    }
-
-    .lang-toast button:hover {
-      background: rgba(255, 255, 255, 0.15);
     }
   </style>
 </head>
 <body>
   <!-- Top-right language selector -->
   <div class="language-switcher-top">
-    <button class="lang-btn" data-lang="en">
-      <img src="flag_en.png" alt="English" class="flag-icon" />
+    <button class="lang-btn active" type="button">
+      <img src="flag-en.png" alt="English" class="flag-icon" />
       <span class="code">EN</span>
     </button>
-    <button class="lang-btn" data-lang="it">
-      <img src="flag_it.png" alt="Italiano" class="flag-icon" />
+    <button class="lang-btn" type="button">
+      <img src="flag-it.png" alt="Italiano" class="flag-icon" />
       <span class="code">IT</span>
     </button>
-    <button class="lang-btn" data-lang="de">
-      <img src="flag_de.png" alt="Deutsch" class="flag-icon" />
+    <button class="lang-btn" type="button">
+      <img src="flag-de.png" alt="Deutsch" class="flag-icon" />
       <span class="code">DE</span>
     </button>
-    <button class="lang-btn" data-lang="fr">
-      <img src="flag_fr.png" alt="Français" class="flag-icon" />
+    <button class="lang-btn" type="button">
+      <img src="flag-fr.png" alt="Français" class="flag-icon" />
       <span class="code">FR</span>
     </button>
   </div>
 
-  <!-- Background video -->
+  <!-- Moving ocean video background -->
   <video class="bg-video" autoplay muted loop playsinline>
     <source src="ocean.mp4" type="video/mp4" />
     Your browser does not support the video tag.
@@ -324,34 +209,26 @@
   <div class="bg-overlay"></div>
 
   <div class="card">
-    <img
-      src="BlueDolphinWHITE_Sunset.jpg"
-      alt="Blue Dolphin Beach Home logo"
-      class="logo"
-    />
+    <!-- Image ABOVE the text -->
+    <img src="BlueDolphinWHITE_Sunset.jpg" alt="Blue Dolphin Beach Home logo" class="logo" />
 
-    <h1 data-i18n="heading">Blue Dolphin Beach Home</h1>
-    <p class="tagline" data-i18n="tagline1">
-      We are working on our Sardinian vacation home! 🐬🌊
-    </p>
-    <p class="tagline tagline-2" data-i18n="tagline2">
-      See you in 2026!
-    </p>
+    <h1>Blue Dolphin Beach Home</h1>
+    <p>We are working on our Sardinian vacation home! 🐬🌊</p>
+    <p>See you in 2026!</p>
 
+    <!-- Email signup section -->
     <div class="signup-section">
-      <h2 data-i18n="signupTitle">Be the First to Stay at Blue Dolphin Beach Home!</h2>
-      <p class="signup-subtext" data-i18n="signupSub">
-        Join our pre-launch VIP list for opening dates, early-bird offers,
-        and Sardinia travel tips. No spam, ever.
+      <h2>Be the First to Stay at Blue Dolphin Beach Home!</h2>
+      <p class="signup-subtext">
+        Join our pre-launch VIP list for opening dates, early-bird offers, and Sardinia travel tips. No spam, ever.
       </p>
 
-      <!-- The iframe that will be swapped per language -->
+      <!-- Brevo signup form iframe -->
       <iframe
-        id="signupFormFrame"
         class="signup-iframe"
         width="540"
         height="250"
-        src=""
+        src="https://be40dcae.sibforms.com/serve/MUIFAIMKpAnZX5ruXPFPs043FMRsz0De_pE146_ihb2KzU8Bgz5kovZkf8669iCi1o0N1ORnfECZH0MLFe1EMEQ-fCMBk35H8JpM7rWZ4ymLKxCqiOG7BR5WHdOabns_d2PU3VSLM6I32oD0OthyX8ZuVTJiYqww03pF4yhy_BMU9W7W22p73_CkRIiP0GbcuR-6IASc1Yeo7Tg0Mg=="
         frameborder="0"
         scrolling="auto"
         allowfullscreen
@@ -359,269 +236,10 @@
       ></iframe>
 
       <p class="signup-disclaimer">
-        <span data-i18n="signupDisclaimer">
-          By subscribing, you consent to receive occasional emails about Blue Dolphin Beach Home and Sardinia travel tips (marketing communications).
-          Your data will be handled by Brevo (Sendinblue) on our behalf and processed in accordance with
-          <a href="/privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
-          You can withdraw your consent at any time via the unsubscribe link in our emails.
-        </span>
+        By subscribing, you agree to receive emails about Blue Dolphin Beach Home and Sardinia travel tips.
+        You can unsubscribe at any time.
       </p>
-      <div class="eco-badge">
-        <img src="leaf.jpg" alt="Eco-friendly" class="eco-icon" />
-      </div>
     </div>
   </div>
-
-  <!-- Language auto-detect toast -->
-  <div class="lang-toast" id="langToast">
-    <span id="langToastText">
-      We switched you to English based on your browser settings. You can change the language above.
-    </span>
-    <button type="button" id="langToastClose">OK</button>
-  </div>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const translations = {
-        en: {
-          htmlLang: "en",
-          metaDescription:
-            "Blue Dolphin Beach Home – a Sardinian vacation home near the beach, opening for guests in 2026.",
-          ogDescription:
-            "We are working on our Sardinian vacation home! See you in 2026. 🐬🌊",
-          twitterDescription:
-            "We are working on our Sardinian vacation home! See you in 2026. 🐬🌊",
-          heading: "Blue Dolphin Beach Home",
-          tagline1: "We are working on our Sardinian vacation home! 🐬🌊",
-          tagline2: "See you in 2026!",
-          signupTitle: "Be the First to Stay at Blue Dolphin Beach Home!",
-          signupSub:
-            "Join our pre-launch VIP list for opening dates, early-bird offers, and Sardinia travel tips. No spam, ever.",
-          signupDisclaimer:
-            "By subscribing, you consent to receive occasional emails about Blue Dolphin Beach Home and Sardinia travel tips (marketing communications). Your data will be handled by Brevo (Sendinblue) on our behalf and processed in accordance with our <a href=\"/privacy.html\" target=\"_blank\" rel=\"noopener noreferrer\">Privacy Policy</a>. You can withdraw your consent at any time via the unsubscribe link in our emails.",
-          autoToast:
-            "We switched the language based on your browser settings. You can change it at any time using the flags above.",
-          formSrc:
-            "https://be40dcae.sibforms.com/serve/MUIFAIMKpAnZX5ruXPFPs043FMRsz0De_pE146_ihb2KzU8Bgz5kovZkf8669iCi1o0N1ORnfECZH0MLFe1EMEQ-fCMBk35H8JpM7rWZ4ymLKxCqiOG7BR5WHdOabns_d2PU3VSLM6I32oD0OthyX8ZuVTJiYqww03pF4yhy_BMU9W7W22p73_CkRIiP0GbcuR-6IASc1Yeo7Tg0Mg=="
-        },
-        it: {
-          htmlLang: "it",
-          metaDescription:
-            "Blue Dolphin Beach Home – una casa vacanze in Sardegna vicino al mare, apertura agli ospiti nel 2026.",
-          ogDescription:
-            "Stiamo lavorando alla nostra casa vacanze in Sardegna! Ti aspettiamo nel 2026. 🐬🌊",
-          twitterDescription:
-            "Stiamo lavorando alla nostra casa vacanze in Sardegna! Ti aspettiamo nel 2026. 🐬🌊",
-          heading: "Blue Dolphin Beach Home",
-          tagline1:
-            "Stiamo lavorando alla nostra casa vacanze in Sardegna! 🐬🌊",
-          tagline2: "Ti aspettiamo nel 2026!",
-          signupTitle:
-            "Sii il primo a soggiornare al Blue Dolphin Beach Home!",
-          signupSub:
-            "Iscriviti alla lista VIP pre-apertura per date di apertura, offerte in anteprima e consigli di viaggio sulla Sardegna. Niente spam, promesso.",
-          signupDisclaimer:
-            "Iscrivendoti, acconsenti a ricevere occasionalmente e-mail su Blue Dolphin Beach Home e consigli di viaggio sulla Sardegna (comunicazioni di marketing). I tuoi dati saranno gestiti da Brevo (Sendinblue) per nostro conto e trattati in conformità con la nostra <a href=\"/privacy.html\" target=\"_blank\" rel=\"noopener noreferrer\">Informativa sulla privacy</a>. Puoi revocare il tuo consenso in qualsiasi momento tramite il link di cancellazione presente nelle nostre e-mail.",
-          autoToast:
-            "Abbiamo impostato la lingua in base alle impostazioni del tuo browser. Puoi cambiarla in qualsiasi momento usando le bandierine in alto.",
-          formSrc:
-            "https://be40dcae.sibforms.com/serve/MUIFABnVj953H7P2_GkjRa9SUQOMbAM-QqgBPdU1cpqB5ltMTCgSe0Lz82toCxVA6jAGPbfmGeNCJFfzQYy7ln0jLXJ3rxR-5cwdPmSUkyLG8leZuNliarFWNgG9DO_gySnG7GAC8yhomnvz2tAWSbNc23hXwm3n46KBTGq_wxxtXSflLXDQAAe6yZt8uIfpFixJW_eu6J3c7EyWIA=="
-        },
-        de: {
-          htmlLang: "de",
-          metaDescription:
-            "Blue Dolphin Beach Home – ein Ferienhaus auf Sardinien in Strandnähe, eröffnet für Gäste im Jahr 2026.",
-          ogDescription:
-            "Wir arbeiten an unserem Ferienhaus auf Sardinien! Wir sehen uns 2026. 🐬🌊",
-          twitterDescription:
-            "Wir arbeiten an unserem Ferienhaus auf Sardinien! Wir sehen uns 2026. 🐬🌊",
-          heading: "Blue Dolphin Beach Home",
-          tagline1:
-            "Wir arbeiten an unserem Ferienhaus auf Sardinien! 🐬🌊",
-          tagline2: "Wir sehen uns 2026!",
-          signupTitle:
-            "Seien Sie die Ersten, die im Blue Dolphin Beach Home übernachten!",
-          signupSub:
-            "Tragen Sie sich in unsere VIP-Liste vor der Eröffnung ein und erhalten Sie Öffnungstermine, Frühbucher-Angebote und Reisetipps für Sardinien. Kein Spam, versprochen.",
-          signupDisclaimer:
-            "Mit Ihrer Anmeldung stimmen Sie zu, gelegentlich E-Mails über Blue Dolphin Beach Home und Reisetipps für Sardinien zu erhalten (Marketing-Mitteilungen). Ihre Daten werden von Brevo (Sendinblue) in unserem Auftrag verwaltet und gemäß unserer <a href=\"/privacy.html\" target=\"_blank\" rel=\"noopener noreferrer\">Datenschutzerklärung</a> verarbeitet. Sie können Ihre Einwilligung jederzeit über den Abmeldelink in unseren E-Mails widerrufen.",
-          autoToast:
-            "Wir haben die Sprache auf Grundlage Ihrer Browser-Einstellungen gewählt. Sie können sie jederzeit über die Flaggen oben ändern.",
-          formSrc:
-            "https://be40dcae.sibforms.com/serve/MUIFAAzPb9A4-Vd2EoWbmU2wl1SfVBD9VuADIbsvwPXIonl78nRlKptKFLxnDoA8lwwCDlVQv7Vgi9OBQzO7RkHAltMwe5AR5dXpU0iZPedt60eauRsmaztEMnE14L2LX33mTGTTv_mOgbBQr-hMtJGHvrcQUFzUgguxmvmjZCHMd9Sit2uWPm6vYqdyRBkl1KdgOhc4VV_RUKyr7A=="
-        },
-        fr: {
-          htmlLang: "fr",
-          metaDescription:
-            "Blue Dolphin Beach Home – une maison de vacances en Sardaigne près de la plage, ouvrant aux invités en 2026.",
-          ogDescription:
-            "Nous préparons notre maison de vacances en Sardaigne ! À très bientôt en 2026. 🐬🌊",
-          twitterDescription:
-            "Nous préparons notre maison de vacances en Sardaigne ! À très bientôt en 2026. 🐬🌊",
-          heading: "Blue Dolphin Beach Home",
-          tagline1:
-            "Nous préparons notre maison de vacances en Sardaigne ! 🐬🌊",
-          tagline2: "À très bientôt en 2026 !",
-          signupTitle:
-            "Soyez parmi les premiers à séjourner au Blue Dolphin Beach Home !",
-          signupSub:
-            "Rejoignez notre liste VIP de pré-ouverture pour recevoir les dates d’ouverture, les offres en avant-première et des conseils de voyage en Sardaigne. Jamais de spam.",
-          signupDisclaimer:
-            "En vous inscrivant, vous acceptez de recevoir occasionnellement des e-mails concernant Blue Dolphin Beach Home et des conseils de voyage en Sardaigne (communications marketing). Vos données seront traitées par Brevo (Sendinblue) pour notre compte et conformément à notre <a href=\"/privacy.html\" target=\"_blank\" rel=\"noopener noreferrer\">Politique de confidentialité</a>. Vous pouvez retirer votre consentement à tout moment via le lien de désinscription présent dans nos e-mails.",
-          autoToast:
-            "Nous avons choisi la langue en fonction des paramètres de votre navigateur. Vous pouvez la modifier à tout moment grâce aux drapeaux ci-dessus.",
-          formSrc:
-            "https://be40dcae.sibforms.com/serve/MUIFALwv6VTlA3OwhCn1g2noKKk1AA2VpdRWfIZuinkv71yymNoIO9e6JKRDy1O1EZ043XMgsTgYDSx6EFkgwmK2ZbpR_Xj5iTHk3Hhzu4Qmh9c1MDzpl7kB7nCFYd3cXIsZWqDVIP9HwlON54nfKcnZXjqEU0EdCJkXlLFrvCWZYpZXXFCsLZl8_uh58_A5TzqjiNp0CgjZYMHDrQ=="
-        }
-      };
-
-      const SUPPORTED_LANGS = ["en", "it", "de", "fr"];
-
-      const el = {
-        html: document.documentElement,
-        heading: document.querySelector('[data-i18n="heading"]'),
-        tagline1: document.querySelector('[data-i18n="tagline1"]'),
-        tagline2: document.querySelector('[data-i18n="tagline2"]'),
-        signupTitle: document.querySelector('[data-i18n="signupTitle"]'),
-        signupSub: document.querySelector('[data-i18n="signupSub"]'),
-        signupDisclaimer: document.querySelector('[data-i18n="signupDisclaimer"]'),
-        metaDescription: document.querySelector('meta[name="description"]'),
-        ogDescription: document.querySelector('meta[property="og:description"]'),
-        twitterDescription: document.querySelector('meta[name="twitter:description"]'),
-        formFrame: document.getElementById("signupFormFrame"),
-        toast: document.getElementById("langToast"),
-        toastText: document.getElementById("langToastText"),
-        toastClose: document.getElementById("langToastClose")
-      };
-
-      function normalizeLang(code) {
-        if (!code) return null;
-        const lower = code.toLowerCase();
-        const base = lower.split(/[-_]/)[0];
-        return SUPPORTED_LANGS.includes(base) ? base : null;
-      }
-
-      function getLangFromUrl() {
-        const params = new URLSearchParams(window.location.search);
-        const param = params.get("lang");
-        return normalizeLang(param);
-      }
-
-      function getLangFromStorage() {
-        try {
-          const stored = localStorage.getItem("bd_lang");
-          return normalizeLang(stored);
-        } catch (e) {
-          return null;
-        }
-      }
-
-      function getLangFromBrowser() {
-        const candidates = [];
-
-        if (Array.isArray(navigator.languages)) {
-          candidates.push(...navigator.languages);
-        }
-        if (navigator.language) {
-          candidates.push(navigator.language);
-        }
-        try {
-          const intlLocale = Intl.DateTimeFormat().resolvedOptions().locale;
-          if (intlLocale) candidates.push(intlLocale);
-        } catch (e) {}
-
-        for (const c of candidates) {
-          const normalized = normalizeLang(c);
-          if (normalized) return normalized;
-        }
-        return "en";
-      }
-
-      function detectInitialLanguage() {
-        const fromUrl = getLangFromUrl();
-        if (fromUrl) return { lang: fromUrl, source: "url" };
-
-        const fromStorage = getLangFromStorage();
-        if (fromStorage) return { lang: fromStorage, source: "storage" };
-
-        const fromBrowser = getLangFromBrowser();
-        return { lang: fromBrowser, source: "browser" };
-      }
-
-      function setLanguage(lang, persist = true) {
-        const t = translations[lang] || translations.en;
-
-        if (el.html) el.html.lang = t.htmlLang || "en";
-
-        if (el.heading) el.heading.textContent = t.heading;
-        if (el.tagline1) el.tagline1.textContent = t.tagline1;
-        if (el.tagline2) el.tagline2.textContent = t.tagline2;
-        if (el.signupTitle) el.signupTitle.textContent = t.signupTitle;
-        if (el.signupSub) el.signupSub.textContent = t.signupSub;
-
-        if (el.signupDisclaimer) {
-          el.signupDisclaimer.innerHTML = t.signupDisclaimer;
-        }
-
-        if (el.metaDescription) {
-          el.metaDescription.setAttribute("content", t.metaDescription);
-        }
-        if (el.ogDescription) {
-          el.ogDescription.setAttribute("content", t.ogDescription);
-        }
-        if (el.twitterDescription) {
-          el.twitterDescription.setAttribute("content", t.twitterDescription);
-        }
-
-        if (el.formFrame && t.formSrc) {
-          const url = t.formSrc.trim();
-          if (el.formFrame.src !== url) {
-            el.formFrame.setAttribute("src", url);
-          }
-        }
-
-        document
-          .querySelectorAll(".language-switcher-top .lang-btn")
-          .forEach((btn) => {
-            btn.classList.toggle("active", btn.dataset.lang === lang);
-          });
-
-        if (persist) {
-          try {
-            localStorage.setItem("bd_lang", lang);
-          } catch (e) {}
-        }
-      }
-
-      const initial = detectInitialLanguage();
-      setLanguage(initial.lang, false);
-
-      if (initial.source === "browser" && el.toast && el.toastText) {
-        const t = translations[initial.lang] || translations.en;
-        if (t.autoToast) {
-          el.toastText.textContent = t.autoToast;
-          el.toast.classList.add("show");
-        }
-      }
-
-      if (el.toast && el.toastClose) {
-        el.toastClose.addEventListener("click", function () {
-          el.toast.classList.remove("show");
-        });
-      }
-
-      document
-        .querySelectorAll(".language-switcher-top .lang-btn")
-        .forEach((btn) => {
-          btn.addEventListener("click", function () {
-            const lang = this.dataset.lang;
-            setLanguage(lang, true);
-            if (el.toast) {
-              el.toast.classList.remove("show");
-            }
-          });
-        });
-    });
-  </script>
 </body>
 </html>
